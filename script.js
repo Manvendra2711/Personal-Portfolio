@@ -29,6 +29,22 @@ function openEmailCompose() {
 
 
 
+// LOADER ANIMATION
+document.addEventListener("DOMContentLoaded", function () {
+    var loaderWrapper = document.querySelector('.loading-wrapper');
+
+    // Show the loader
+    loaderWrapper.style.display = "block";
+
+    // Hide the loader after 2 seconds
+    setTimeout(function () {
+        loaderWrapper.style.display = "none";
+    }, 2000);
+});
+
+
+
+
 //Scroll Sections
 
 let sections = document.querySelectorAll('section');
@@ -67,3 +83,36 @@ window.onscroll = () => {
     let footer = document.querySelector('footer');
     footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
 }
+
+
+
+// // SMTP Mails for contact form
+// const form = document.querySelector('form');
+// const fullName = document.getElementById("name");
+// const Email = document.getElementById("email");
+// const phno = document.getElementById("mobile");
+// const Subemail = document.getElementById("subemail");
+// const Message = document.getElementById("mess");
+
+// function sendEmail() {
+
+//     const bodyMessage = `Full Name: ${fullName.value}<br> Email: ${Email.value} <br> Phone Number: ${phno.value}<br> Message: ${Message.value}`;
+
+
+//     Email.send({
+//         Host: "smtp.elasticemail.com",
+//         Username: "manvendrasingh27112002@gmail.com",
+//         Password: "BC570101DBAF15466852288ABEBFB2E80FAD",
+//         To: 'manvendrasingh27112002@gmail.com',
+//         From: "manvendrasingh27112002@gmail.com",
+//         Subject: Subemail.value,
+//         Body: bodyMessage
+//     }).then(
+//         message => alert(message)
+//     );
+// }
+
+// form.addEventListener("submit", (e) => {
+//     e.preventDefault();
+//     sendEmail();
+// })
